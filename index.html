@@ -3,7 +3,21 @@
 <head>
   <link href='https://fonts.googleapis.com/css?family=EB Garamond' rel='stylesheet'>
   <meta charset="UTF-8">
-  <title>Shad</title>
+  <title>Shad Gitiforooz</title>
+
+  <link rel="icon" type="image/x-icon" href="favicon.ico"> <!-- Default favicon -->
+  <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32"> <!-- 32x32 PNG -->
+  <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16"> <!-- 16x16 PNG -->
+  <link rel="apple-touch-icon" href="apple-touch-icon.png"> <!-- For Apple devices -->
+  <link rel="icon" type="image/png" href="android-chrome-192x192.png" sizes="192x192"> <!-- 192x192 PNG -->
+  <link rel="icon" type="image/png" href="android-chrome-312x312.png" sizes="312x312"> <!-- 192x192 PNG -->
+  
+  <!-- Add theme color for Android Chrome (controls status bar color in PWA mode) -->
+   <meta name="theme-color" content="#EE4023">
+
+  <!-- Configure site as a web app -->
+  <link rel="manifest" href="site.webmanifest">
+
   <style>
     /* Reset default margins and paddings */
     * {
@@ -32,15 +46,32 @@
     h1 {
       font-size: 40px;
       margin-top: 70px;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
       margin-left: 30px;
-      color: #333;
+      color: #363737;
       position: relative; /* Ensure it's above the grain effect */
       z-index: 2;
-      line-height: 1.6;
+      line-height: 1;
+      opacity: 1;
+      transition: opacity 2s ease;
+    }
+
+    .hidden {
+      opacity: 0; /* Fades the element out */
     }
 
     /* Bio Section Styling */
+    .bio p {
+      color: #363737;
+      text-align: left;
+      display: block;
+      margin-bottom: 30px;
+      position: relative;
+      z-index: 2; /* Ensure the bio is above the grain effect */
+
+    }
+
+    /* Footer Section Styling */
     .bio p {
       color: #363737;
       text-align: left;
@@ -70,7 +101,6 @@
       font-size: 24px;
       margin-top: 50px;
       text-align: right;
-
     }
 
     /* Links Styling */
@@ -80,7 +110,6 @@
     transition: color 0.3s ease; /* Smooth transition for color change */
     cursor: pointer;
     }
-
     .bio a:hover {
     color: #EE4023; /* Change color to orange on hover */
     text-decoration: underline; /* Keep the underline on hover */
@@ -108,7 +137,7 @@
 
 <body id="grainyBody">
   <!-- Header -->
-  <h1>I'm Shadmehr.</h1>
+  <h1 id="dynamicHeader">I'm Shad.</h1>
   
   <!-- Bio Section -->
   <div class="bio">
@@ -135,11 +164,34 @@
       "animate": true,  // Enable animation
       "patternWidth": 500,  // Width of the pattern
       "patternHeight": 500, // Height of the pattern
-      "grainOpacity": 0.12,  // Adjust for a subtle effect
+      "grainOpacity": 0.05,  // Adjust for a subtle effect
       "grainDensity": 1,    // Density of the grain
       "grainWidth": 2,      // Grain size width
       "grainHeight": 1      // Grain size height
     });
+
+    // JavaScript for dynamic header text switching
+    const headerElement = document.getElementById('dynamicHeader');
+    const texts = ["I'm Shad.", ".شادمهر هستم"];
+    let currentIndex = 0;
+
+    function changeHeaderText() {
+      // Fade out
+      headerElement.classList.add('hidden');
+      
+      // Wait for the fade-out to complete before changing the text
+      setTimeout(() => {
+        currentIndex = (currentIndex + 1) % texts.length;
+        headerElement.textContent = texts[currentIndex];
+        
+        // Fade back in
+        headerElement.classList.remove('hidden');
+      }, 1700); // Matches the duration of the CSS transition (1 second)
+    }
+
+    // Change header text every 5 seconds, with smooth transitions
+    setInterval(changeHeaderText, 6000);
+
   </script>
 </body>
 </html>
