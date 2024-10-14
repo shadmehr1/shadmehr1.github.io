@@ -4,35 +4,53 @@
   <meta charset="UTF-8">
   <title>Shadmehr</title>
   <style>
+    /* Reset default margins and paddings */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Ensure html and body take full height */
+    html, body {
+      height: 100%;
+      overflow: hidden; /* Prevent scrollbars from appearing */
+    }
+
     body {
       font-family: Helvetica, Sans-Serif;
       text-align: left;
       margin-top: 10%;
-      background-color: #E4E2DD;
+      background-color: #E4E2DD; /* Background color */
+      position: relative; /* For grainy effect */
     }
 
     /* Header Styling */
     h1 {
-      font-size: 36px; /* Larger font size for the header */
+      font-size: 36px;
       margin-bottom: 20px;
       color: #333;
+      position: relative; /* Ensure it's above the grain effect */
+      z-index: 2;
     }
 
     /* Bio Section Styling */
     .bio {
-      font-size: 22px; /* Set font size to 12px */
+      font-size: 22px;
       color: #363737;
-      text-align: left; /* Align text to the left for indentation */
-      display: inline-block; /* Shrink to fit content */
+      text-align: left;
+      display: inline-block;
       margin-bottom: 30px;
+      position: relative;
+      z-index: 2; /* Ensure the bio is above the grain effect */
     }
 
     /* Indentation Classes */
     .indent-1 {
-      margin-left: 20px; /* Indent first line */
+      margin-left: 20px;
     }
     .indent-2 {
-      margin-left: 40px; /* Indent second line further */
+      margin-left: 40px;
     }
 
     /* Links Styling */
@@ -40,16 +58,20 @@
       display: inline-block;
       margin: 0 10px;
       font-size: 22px;
-      color: #363737; /* glowing orange */
+      color: #363737;
       text-decoration: underline;
-      transition: color 0.3s ease; /* Smooth transition for color change */
-      cursor: pointer; /* Changes cursor to pointer on hover */
+      transition: color 0.3s ease;
+      cursor: pointer;
+      position: relative;
+      z-index: 2;
     }
     .links a:hover {
       color: #EE4023;
       text-decoration: underline;
     }
   </style>
+  <!-- Add Grained.js CDN -->
+  <script src="https://cdn.jsdelivr.net/gh/sarathsaleem/grained/grained.min.js"></script>
 </head>
 <body>
   <!-- Header -->
@@ -64,10 +86,24 @@
   
   <!-- Links Section -->
   <div class="links">
-    <a hreg="https://github.com/shadmehr1">GitHub</a>
+    <a href="https://github.com/shadmehr1">GitHub</a>
     <a href="https://shadmehr.substack.com/?utm_source=substack&utm_medium=web&utm_campaign=substack_profile">Substack</a>
     <a href="https://www.linkedin.com/in/gitiforooz/">LinkedIn</a>
     <a href="mailto:sgitiforooz.com">Email Me</a>
   </div>
+
+  <!-- Initialize Grained.js for grainy background -->
+  <script>
+    // Applying the grainy effect to the body
+    grained('#body', {
+      "animate": true,  // Enable animation
+      "patternWidth": 500,  // Width of the pattern
+      "patternHeight": 500, // Height of the pattern
+      "grainOpacity": 0.12,  // Adjust for a subtle effect
+      "grainDensity": 1,    // Density of the grain
+      "grainWidth": 1.92,      // Grain size width
+      "grainHeight": 1.61      // Grain size height
+    });
+  </script>
 </body>
 </html>
