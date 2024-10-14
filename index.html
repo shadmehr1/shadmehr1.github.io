@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   <meta charset="UTF-8">
   <title>Shadmehr</title>
   <style>
@@ -11,17 +10,37 @@
       margin-top: 20%;
       background-color: #E4E2DD;
     }
+    /* Header Styling */
+    h1 {
+      font-size: 36px; /* Larger font size for the header */
+      margin-bottom: 20px;
+      color: #333;
+    }
+    /* Bio Section Styling */
     .bio {
-      font-size: 24px;
-      margin-bottom: 30px;
+      font-size: 12px; /* Set font size to 12px */
       color: #363737;
+      text-align: left; /* Align text to the left for indentation */
+      display: inline-block; /* Shrink to fit content */
+      margin-bottom: 30px;
+    }
+    /* Indentation Classes */
+    .indent-1 {
+      margin-left: 20px; /* Indent first line */
+    }
+    .indent-2 {
+      margin-left: 40px; /* Indent second line further */
+    }
+    /* Links Styling */
     }
     .links a {
       display: inline-block;
       margin: 0 10px;
       font-size: 18px;
-      color: #363737;
+      color: #363737; /* glowing orange */
       text-decoration: underline;
+      transition: color 0.3s ease; /* Smooth transition for color change */
+      cursor: pointer; /* Changes cursor to pointer on hover */
     }
     .links a:hover {
       color: #EE4023;
@@ -30,12 +49,17 @@
   </style>
 </head>
 <body>
+  <!-- Header -->
+  <h1>I'm Shadmehr.</h1>
+  
+  <!-- Bio Section -->
   <div class="bio">
-    I'm Shadmehr.
-    I'm an aerospace engineer, designing high performance Satcom antennas.
-    Before this, I built a $33M grocery delivery startup, and developed headphone prototypes for Sonos.
-    Sometimes, I run Ironmans, code, and write.
+    <p class="indent-1">I'm an aerospace engineer, designing high performance Satcom antennas.</p>
+    <p class="indent-2">Before this, I built a $33M grocery delivery startup, and developed headphone prototypes for Sonos.</p>
+    <p>Sometimes, I run Ironmans, code, and write.</p>
   </div>
+  
+  <!-- Links Section -->
   <div class="links">
     <a hreg="https://github.com/shadmehr1">GitHub</a>
     <a href="https://shadmehr.substack.com/?utm_source=substack&utm_medium=web&utm_campaign=substack_profile">Substack</a>
@@ -44,4 +68,3 @@
   </div>
 </body>
 </html>
-
