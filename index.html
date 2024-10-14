@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link href='https://fonts.googleapis.com/css?family=EB Garamond' rel='stylesheet'>
   <meta charset="UTF-8">
-  <title>Shadmehr</title>
+  <title>Shad</title>
   <style>
     /* Reset default margins and paddings */
     * {
@@ -14,49 +15,80 @@
     /* Ensure html and body take full height */
     html, body {
       height: 100%;
+      width: 100%;
       overflow: hidden; /* Prevent scrollbars from appearing */
     }
 
     body {
-      font-family: Helvetica, Sans-Serif;
+      font-family: EB Garamond;
       text-align: left;
-      margin-top: 10%;
       background-color: #E4E2DD; /* Background color */
       position: relative; /* For grainy effect */
+      height: 100%;
+      padding: 20px;
     }
 
     /* Header Styling */
     h1 {
-      font-size: 36px;
-      margin-bottom: 20px;
+      font-size: 40px;
+      margin-top: 70px;
+      margin-bottom: 30px;
+      margin-left: 30px;
       color: #333;
       position: relative; /* Ensure it's above the grain effect */
       z-index: 2;
+      line-height: 1.6;
     }
 
     /* Bio Section Styling */
-    .bio {
-      font-size: 22px;
+    .bio p {
       color: #363737;
       text-align: left;
       display: inline-block;
       margin-bottom: 30px;
       position: relative;
       z-index: 2; /* Ensure the bio is above the grain effect */
+
     }
 
     /* Indentation Classes */
-    .indent-1 {
-      margin-left: 20px;
+    .bio-1 {
+      font-size: 28px;
+      margin-left: 50px;
     }
-    .indent-2 {
-      margin-left: 40px;
+    .bio-2 {
+      font-size: 24px;
+      margin-left: 60px;
+      line-height: 1;
+    }
+    .bio-3 {
+      font-size: 24px;
+      margin-left: 70px;
+      line-height: 1;
+    }
+    .footer-1 {
+      font-size: 24px;
+      margin-top: 50px;
+      text-align: right;
+
     }
 
     /* Links Styling */
+    .bio a {
+    color: #363737; /* Same base color as other links */
+    text-decoration: underline; /* Add underline to the link */
+    transition: color 0.3s ease; /* Smooth transition for color change */
+    cursor: pointer;
+    }
+
+    .bio a:hover {
+    color: #EE4023; /* Change color to orange on hover */
+    text-decoration: underline; /* Keep the underline on hover */
+    }
     .links a {
       display: inline-block;
-      margin: 0 10px;
+      margin: 15px;
+      margin-left: 50px;
       font-size: 22px;
       color: #363737;
       text-decoration: underline;
@@ -73,36 +105,40 @@
   <!-- Add Grained.js CDN -->
   <script src="https://cdn.jsdelivr.net/gh/sarathsaleem/grained/grained.min.js"></script>
 </head>
-<body>
+
+<body id="grainyBody">
   <!-- Header -->
   <h1>I'm Shadmehr.</h1>
   
   <!-- Bio Section -->
   <div class="bio">
-    <p class="indent-1">I'm an aerospace engineer, designing high performance Satcom antennas.</p>
-    <p class="indent-2">Before this, I built a $33M grocery delivery startup, and developed headphone prototypes for Sonos.</p>
-    <p class="indent-2">Sometimes, I run Ironmans, code, and write.</p>
+    <p class="bio-1">I make high performance Satcom <a href="https://thinkom.com" target="blank"> antennas</a>.</p>
+    <p class="bio-2">Before this, I built a $33M startup, <a href="https://www.duffl.com/?view=Landing" target="blank">Duffl</a>, and developed <a href="https://www.sonos.com/en-us/shop/sonos-ace" target="_blank">headphones at Sonos</a>.</p>
+    <p class="bio-3">Sometimes, I run <a href="https://instagram.com/_finishingfast/" target="_blank">triathlons</a>, <a href="https://github.com/shadmehr1" target="_blank">code</a>, and  <a href="https://shadmehr.substack.com/" target="_blank">write</a>.</p>
   </div>
   
   <!-- Links Section -->
   <div class="links">
-    <a href="https://github.com/shadmehr1">GitHub</a>
-    <a href="https://shadmehr.substack.com/?utm_source=substack&utm_medium=web&utm_campaign=substack_profile">Substack</a>
     <a href="https://www.linkedin.com/in/gitiforooz/">LinkedIn</a>
     <a href="mailto:sgitiforooz.com">Email Me</a>
   </div>
 
-  <!-- Initialize Grained.js for grainy background -->
+  <!-- Footer Section -->
+  <div class="footer">
+    <p class="footer-1"> last updated oct 2024.</p>
+  </div>
+
+  <!-- Initialize Grained.js for grainy background on body -->
   <script>
-    // Applying the grainy effect to the body
-    grained('#body', {
+    // Applying the grainy effect to the body element
+    grained('#grainyBody', {
       "animate": true,  // Enable animation
       "patternWidth": 500,  // Width of the pattern
       "patternHeight": 500, // Height of the pattern
       "grainOpacity": 0.12,  // Adjust for a subtle effect
       "grainDensity": 1,    // Density of the grain
-      "grainWidth": 1.92,      // Grain size width
-      "grainHeight": 1.61      // Grain size height
+      "grainWidth": 2,      // Grain size width
+      "grainHeight": 1      // Grain size height
     });
   </script>
 </body>
