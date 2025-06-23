@@ -51,7 +51,7 @@ html, body {
 /* SPA fade in/out for entire page content */
 .page {
   opacity: 0;
-  transition: opacity 1.2s ease;   /* slower fade IN */
+  transition: opacity 1.2s ease;
 }
 
 .page.fade-in {
@@ -59,7 +59,7 @@ html, body {
 }
 
 .page.fade-out {
-  transition: opacity .8s ease;  /* faster fade OUT */
+  transition: opacity .8s ease;
 }
 
 /* Inner content wrapper */
@@ -70,14 +70,12 @@ html, body {
   padding: 20px;
 }
 
-/* Wider version for projects page */
 .projects-container {
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 20px;
 }
 
-/* BIG header with SMOOTH fade */
 h1 {
   font-size: 40px;
   color: #333;
@@ -99,7 +97,6 @@ h1 * {
   opacity: 0;
 }
 
-/* Nav links stack vertically */
 .links {
   display: flex;
   flex-direction: column;
@@ -118,20 +115,18 @@ a:hover {
   color: #EE4023;
 }
 
-/* Fixed footer and corner links */
 .last-updated {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  font-size: 16px; /* smaller! */
+  font-size: 16px;
   color: #363737;
   z-index: 2;
 }
 
-/* Contact link — higher up */
 .contact-link {
   position: fixed;
-  bottom: 50px; /* higher than LinkedIn */
+  bottom: 50px;
   left: 20px;
   font-size: 24px;
   color: #363737;
@@ -144,10 +139,9 @@ a:hover {
   color: #EE4023;
 }
 
-/* LinkedIn link — below Contact */
 .linkedin-link {
   position: fixed;
-  bottom: 20px; /* near page edge */
+  bottom: 20px;
   left: 20px;
   font-size: 24px;
   color: #363737;
@@ -160,7 +154,6 @@ a:hover {
   color: #EE4023;
 }
 
-/* Work page text */
 .work-content p {
   font-size: 24px;
   line-height: 1.5;
@@ -168,7 +161,6 @@ a:hover {
   margin-bottom: 20px;
 }
 
-/* Projects blocks */
 .project-block {
   display: flex;
   align-items: center;
@@ -208,9 +200,13 @@ a:hover {
   width: 100%;
   height: auto;
   border-radius: 8px;
+  transition: transform 0.3s ease;  /* Expand effect */
 }
 
-/* About page filler text */
+.project-image img:hover {
+  transform: scale(1.05);
+}
+
 .about-text {
   font-size: 20px;
   line-height: 1.6;
@@ -219,14 +215,12 @@ a:hover {
   margin: 20px auto;
 }
 
-/* "Lately" header */
 .lately-heading {
   font-size: 30px;
   margin: 40px 0 20px;
   color: #333;
 }
 
-/* Responsive gallery grid */
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -245,9 +239,8 @@ a:hover {
   transform: scale(1.05);
 }
 
-/* For About page — wider than regular container */
 .about-container {
-  max-width: 1200px;  /* or whatever looks good! */
+  max-width: 1200px;
   margin: 0 auto;
   text-align: center;
   padding: 20px;
@@ -255,16 +248,8 @@ a:hover {
 
 .project-date {
   font-style: italic;
-  font-size: 16px;      /* smaller than before */
-  color: #aaa;          /* lighter grey */
-  margin: 6px 0 16px;   /* top/bottom spacing: more below for nice gap */
-  display: block;       /* ensure it sits as its own line */
-}
-
-.project-image img {
-  transition: transform 0.3s ease;
-}
-
-.project-image img:hover {
-  transform: scale(1.05);
+  font-size: 16px;
+  color: #aaa;
+  margin: 6px 0 16px;
+  display: block;
 }
