@@ -260,3 +260,11 @@ a:hover {
   margin: 6px 0 16px;   /* top/bottom spacing: more below for nice gap */
   display: block;       /* ensure it sits as its own line */
 }
+
+.project-image img {
+  transition: transform 0.3s ease;
+}
+
+.project-image img:hover {
+  transform: scale(1.05);
+}
