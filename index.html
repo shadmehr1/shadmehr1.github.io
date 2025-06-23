@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Shadmehr</title>
+  <link rel="icon" href="favicon/favicon.ico" />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Grain plugin -->
+  <script src="https://cdn.jsdelivr.net/gh/sarathsaleem/grained/grained.min.js"></script>
+</head>
+<body>
+  <!-- 1. Fixed overlay (plugin will inject inline style, but our CSS will !override it) -->
+  <div id="grain-overlay"></div>
+
+  <!-- 2. SPA content container -->
+  <div id="page" class="page"></div>
+
+  <script src="spa.js"></script>
+</body>
+</html>
